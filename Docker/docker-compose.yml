@@ -1,0 +1,23 @@
+services:
+  postgresql:
+    image: postgres #: version, si no se especifica descarga la estable más reciente
+    container_name: "4bm2postgresqlDocker"
+    restart: always
+    environment:
+      POSTGRES_DB: "NombreDeLaBaseDeDatos"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    ports:
+      - "5173:5432" #Escucha (enmascarado): Puerto que utiliza el servicio
+
+  mysql:
+    image: mysql #: version, si no se especifica descarga la estable más reciente
+    container_name: "4bm2mysqlDocker"
+    restart: always
+    environment:
+      MYSQL_DATABASE: "NombreDeLaBaseDeDatos"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - "3310:3306" #Escucha (enmascarado): Puerto que utiliza el servicio
